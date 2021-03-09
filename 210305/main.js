@@ -4,9 +4,7 @@ class AccordionWrap extends HTMLElement {
 		super();
 
 		//생성자의 일부로 사용자 정의 요소에 Shadow Dom을 연결
-		this.attachShadow({
-			mode: 'open'
-		});
+		this.attachShadow({mode: 'open'});
 
 		this.shadowRoot.innerHTML = `
 				<style>
@@ -35,12 +33,20 @@ class AccordionWrap extends HTMLElement {
 					<dd>
 						<slot name="txt"></slot>
 					</dd>
+					<dt>
+						<slot name="ttl2"></slot>
+					</dt>
+					<dd>
+						<slot name="txt2"></slot>
+					</dd>
 				</dl>
 			`;
 
-		this.shadowRoot.querySelector('dt')
-			.addEventListener('click', this.accorAction);
-
+		let dtAction = this.shadowRoot.querySelectorAll('dt');
+		for(let i = 0; i < dtAction.length; i++) {
+			console.log(dtAction);
+			dtAction[i].addEventListener('click', this.accorAction);
+		}
 	}
 
 	accorAction() {
@@ -55,4 +61,3 @@ class AccordionWrap extends HTMLElement {
 }
 
 customElements.define('accordion-wrap', AccordionWrap);
-
