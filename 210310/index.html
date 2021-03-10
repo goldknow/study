@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VUE</title>
+    <!-- vuejs dist -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+
+        <!-- if else -->
+        <span v-if="false">
+            <strong class="on-vue">{{vuejsString}}</strong>엘리먼트
+        </span>
+        <span v-else-if="typeof isVuejs === 'undefined'">
+            else-if 엘리먼트~
+        </span>
+        <span v-else>else~</span>
+
+        <hr>
+
+        <!-- for -->
+        <div v-for="(item, key) in items" :key="key">
+            <transition name="vuejs" appear>
+                <span v-if="item.visible" :class="item.class">
+                    {{item.text}}
+                </span>
+            </transition>
+            <button @click="toggle(key)">토글</button>
+        </div>
+
+        <hr>
+
+        <!-- 이벤트 핸들링 -->
+        <button @click="clickCount++" @keyup.left="clickCount--" @keyup.right="clickCount++">
+            {{clickCount}}
+        </button>
+
+        <hr>
+
+        <!-- table -->
+        <!-- 
+            테이블이나 리스트 만들기 
+            클릭했을때 각각의 내용이 변하게 하기 
+        -->
+        <table>
+            <colgroup>
+                <col width='40%'>
+                <col width='*'>
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>제목1</th>
+                    <th>제목2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(item,key) in lists" :key="key">
+                    <!-- 클릭했을 때 이벤트 발생시키기 -->
+                    <td 
+                    
+                        @click="isActive = !isActive" 
+                        :class="{ active: isActive }"
+                    
+                    >
+                        <div>
+                            {{item.td1}}
+                        </div>
+                    </td>
+                    <td>{{item.td2}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr>
+
+
+    </div>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        table {
+            width: 400px;
+            text-align: center;
+        }
+
+        th,td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #ddd;
+            margin: 20px 0;
+            padding: 20px 0
+        }
+
+        strong {
+            color: #d02f2f;
+        }
+
+        .on-vue {
+            color: #1a35dd;
+        }
+
+        .danger {
+            color: #d02f2f;
+        }
+
+        .info {
+            color: #1a35dd;
+        }
+
+        .success {
+            color: #15ae15;
+        }
+
+        .vuejs-enter-active,
+        .vuejs-leave-active {
+            transition: opacity .5s;
+        }
+
+        .vuejs-enter,
+        .vuejs-leave-to {
+            opacity: 0;
+        }
+    </style>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                isVuejs: false,
+                isActive: null,
+                vuejsString: 'Vuejs',
+                items: [
+                    {
+                        class: 'danger',
+                        text: '반복문',
+                        visible: true
+                    },
+                    {
+                        class: 'info',
+                        text: '테스트',
+                        visible: true
+                    },
+                    {
+                        class: 'success',
+                        text: '입니다',
+                        visible: true
+                    }
+                ],
+                clickCount: 0,
+
+                lists: [
+                    {
+                        td1: '내용11',
+                        td2: '내용12',
+                    },
+                    {
+                        td1: '내용21',
+                        td2: '내용22'
+                    }
+                ]
+            },
+            methods: {
+                toggle: function (key) {
+                    this.items[key].visible = !this.items[key].visible;
+                    console.log(this.items[key].visible);
+                },
+                toggleActive: function () {
+                    //addClass 만들어보기
+                    this.isActive = !this.isActive;
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>
