@@ -60,19 +60,14 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="(item,key) in lists" :key="key">
+                <tr v-for="(list,key) in lists" :key="key">
                     <!-- 클릭했을 때 이벤트 발생시키기 -->
-                    <td 
-                    
-                        @click="isActive = !isActive" 
-                        :class="{ active: isActive }"
-                    
-                    >
-                        <div>
-                            {{item.td1}}
+                    <td @click="isActive(key)">
+                        <div :class="list.active">
+                            {{list.td1}}
                         </div>
                     </td>
-                    <td>{{item.td2}}</td>
+                    <td>{{list.td2}}</td>
                 </tr>
             </tbody>
         </table>
@@ -82,19 +77,19 @@
 
     </div>
     <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
         table {
             width: 400px;
             text-align: center;
         }
 
-        th,td {
+        th,
+        td {
             padding: 10px;
             border: 1px solid #ddd;
+        }
+
+        .active {
+            color: red;
         }
 
         hr {
@@ -140,10 +135,10 @@
             el: '#app',
             data: {
                 isVuejs: false,
-                isActive: null,
+                active: false,
                 vuejsString: 'Vuejs',
-                items: [
-                    {
+
+                items: [{
                         class: 'danger',
                         text: '반복문',
                         visible: true
@@ -161,25 +156,34 @@
                 ],
                 clickCount: 0,
 
-                lists: [
-                    {
+                lists: [{
                         td1: '내용11',
                         td2: '내용12',
+                        active: false
                     },
                     {
                         td1: '내용21',
-                        td2: '내용22'
+                        td2: '내용22',
+                        active: false
                     }
                 ]
             },
             methods: {
                 toggle: function (key) {
                     this.items[key].visible = !this.items[key].visible;
-                    console.log(this.items[key].visible);
                 },
-                toggleActive: function () {
+                isActive: function (key) {
                     //addClass 만들어보기
-                    this.isActive = !this.isActive;
+                    this.lists[key].active = !this.lists[key].active;
+                    let _thisActive = this.lists[key].active;
+                    let _this = this.lists[key].active;
+                    
+                    console.log(_thisActive); // true, false 반환
+                    console.log(this);
+                    // true일때 add = active
+                    
+
+                    // flase일때 remove = active
                 }
             }
         })
