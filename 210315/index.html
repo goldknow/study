@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>VUE </title>
+	<!-- vuejs dist -->
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+	<div id="app">
+
+		<!-- Vue CDN 을 이용하여 Snackbar 의 기능을 구현해주세요. -->
+
+		<!-- 
+			'[필수] 이용약관'
+			체크 하지 않고 가입하기 누르면 '동의해주세요' 스낵바 show
+			체크 하고 가입하기 누르면 '가입되었습니다' 스낵바 show
+		-->
+
+		<input type="checkbox" id="checkbox" v-model="checked">
+		<label for="checkbox">[필수] 이용약관 ({{ checked }})</label>
+		<br><br>
+		<button @click="show = checked">가입하기</button>
+
+		<transition 
+			name="infoAlert" 
+			mode="out-in"
+		>
+			<p class="info agree" v-if="show">가입되었습니다</p>
+			<p class="info disagree" v-else>동의해주세요</p>
+		</transition>
+
+
+	</div>
+	<script>
+		new Vue({
+			el: '#app',
+			data: {
+				checked: false,
+				show: false,
+			},
+			methods: {
+
+			}
+		})
+	</script>
+
+	<style lang="scss">
+		label {
+			cursor: pointer;
+		}
+
+		.info {
+			/* opacity: 0; */
+			padding: 10px 30px;
+			position: fixed;
+			bottom: 50px;
+			left: 50%;
+			transform: translateX(-50%);
+			color: #fff;
+			border-radius: 13px;
+			/* animation: infoAlert 3s cubic-bezier(0.22, 0.15, 0.25, 1.43) 0s forwards; */
+		} 
+
+		.disagree {
+			background-color: #eb5151b0;
+		}
+
+		.agree {
+			background-color: #4caf50;
+		}
+
+		.infoAlert-enter-active,
+		.infoAlert-leave-active {
+			transition: opacity .5s;
+		}
+
+		.infoAlert-enter,
+		.infoAlert-leave-to {
+			opacity: 0;
+		}
+
+		@keyframes infoAlert {
+			0% {
+				opacity: 0;
+			}
+			50% {
+				opacity: 1;
+			}
+			100% {
+				opacity: 0;
+			}
+		}
+	</style>
+</body>
+
+</html>
