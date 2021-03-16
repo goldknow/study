@@ -6,6 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>VUE </title>
+	<link rel="stylesheet" href="http://meta-kage.kakaocdn.net/dn/osa/blog/assets/fonts/Kakao.css">
 	<!-- vuejs dist -->
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
@@ -24,15 +25,23 @@
 		<input type="checkbox" id="checkbox" v-model="checked">
 		<label for="checkbox">[필수] 이용약관 ({{ checked }})</label>
 		<br><br>
-		<button @click="show = checked">가입하기</button>
+		<!-- <button @click="show = !checked">가입하기</button> -->
 
-		<transition 
-			name="infoAlert" 
-			mode="out-in"
-		>
-			<p class="info agree" v-if="show">가입되었습니다</p>
-			<p class="info disagree" v-else>동의해주세요</p>
+		<transition name="infoAlert" mode="out-in">
+			<div class="info agree" v-if="checked">동의하셨습니다</div>
+			<div class="info disagree" v-else>동의해주세요</div>
 		</transition>
+
+		<!-- <transition name="infoAlert" mode="out-in" :class="isAni">
+			<div 
+				class="info" 
+				v-for="(item, key) in items" :key="key" 
+				:class="item.class"
+				v-if="item.show"
+			>
+				{{ item.text }}
+			</div>
+		</transition> -->
 
 
 	</div>
@@ -41,21 +50,35 @@
 			el: '#app',
 			data: {
 				checked: false,
-				show: false,
-			},
-			methods: {
-
+				//show: false,
+				//isActive: false,
+				// items: [
+				// 	{
+				// 		class:'agree',
+				// 		text:'동의하셨습니다',	
+				// 		checked: true		
+				// 	}, 
+				// 	{
+				// 		class:'disagree',
+				// 		text:'동의해주세요',
+				// 		checked: false
+				// 	},
+				// ]
 			}
 		})
 	</script>
 
 	<style lang="scss">
+		* {
+			font-family: 'Kakao'
+		}
+
 		label {
 			cursor: pointer;
 		}
 
 		.info {
-			/* opacity: 0; */
+			opacity: 1;
 			padding: 10px 30px;
 			position: fixed;
 			bottom: 50px;
@@ -63,8 +86,11 @@
 			transform: translateX(-50%);
 			color: #fff;
 			border-radius: 13px;
-			/* animation: infoAlert 3s cubic-bezier(0.22, 0.15, 0.25, 1.43) 0s forwards; */
-		} 
+		}
+
+		.info.on {
+			animation: infoAlert 3s cubic-bezier(0.22, 0.15, 0.25, 1.43) 0s forwards;
+		}
 
 		.disagree {
 			background-color: #eb5151b0;
@@ -84,17 +110,19 @@
 			opacity: 0;
 		}
 
+		
 		@keyframes infoAlert {
-			0% {
-				opacity: 0;
-			}
-			50% {
-				opacity: 1;
-			}
-			100% {
-				opacity: 0;
-			}
-		}
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
 	</style>
 </body>
 
