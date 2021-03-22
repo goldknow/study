@@ -7,7 +7,7 @@
     </div>
 </template>
 <script>
-    import MainHeader from './MainHeader.vue'
+    import MainHeader from './MainHeader'
     export default {
         name: 'Welcome',
         components: {
@@ -16,5 +16,7 @@
     }
 </script>
 <style lang="scss" scoped>
-.cont {background-color: #fef1e0;}
+    .cont {
+        background-color: #fef1e0;
+    }
 </style>
