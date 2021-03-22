@@ -1,11 +1,13 @@
 <template>
     <div>
         <main-header></main-header>
-        About
+        <section class="cont">
+            About
+        </section>
     </div>
 </template>
 <script>
-    import MainHeader from '@/components/MainHeader.vue'
+    import MainHeader from './MainHeader.vue'
     export default {
         name: 'About',
         components: {
@@ -13,3 +15,6 @@
         },
     }
 </script>
+<style lang="scss" scoped>
+.cont {background-color: #e6fce6;}
+</style>

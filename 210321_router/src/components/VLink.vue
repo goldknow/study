@@ -19,8 +19,8 @@
             }
         },
         methods: {
-            go() {
-                //event.preventDefault()
+            go(e) {
+                e.preventDefault()
                 this.$root.currentRoute = this.href
                 window.history.pushState(
                     null,

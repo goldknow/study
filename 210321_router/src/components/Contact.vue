@@ -1,7 +1,9 @@
 <template>
     <div>
         <main-header></main-header>
-        Contact
+        <section class="cont">
+            Contact
+        </section>
     </div>
 </template>
 <script>
@@ -13,3 +15,6 @@
         },
     }
 </script>
+<style lang="scss" scoped>
+.cont {background-color: #d6f3f7;}
+</style>
