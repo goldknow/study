@@ -42,7 +42,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## popstate
 --pushState와 replaceState로 주소를 바꾼 후, 뒤로가기나 앞으로가기를 했을 때 발생하는 이벤트
---주의) pushState와 replaceState를 할 때는 이벤트가 발생하지 않는다. pushState와 replaceState를 한 후, 뒤로가기나 앞으로가기를 할 때만 발생한다.
+--주의) pushState와 replaceState를 할 때는 이벤트가 발생하지 않는다. 
+pushState와 replaceState를 한 후, 뒤로가기나 앞으로가기를 할 때만 발생한다.
 
 
 
