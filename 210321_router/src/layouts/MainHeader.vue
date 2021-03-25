@@ -10,9 +10,6 @@
 <script>
     export default {
         name: 'Header',
-        computed: {
-
-        },
         data() {
             return {
                 headerData: [{
@@ -32,9 +29,6 @@
                     },
                 ]
             }
-        },
-        methods: {
-
         }
     }
 </script>

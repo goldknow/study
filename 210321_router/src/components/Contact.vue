@@ -1,18 +1,11 @@
 <template>
-    <div>
-        <main-header></main-header>
-        <section class="cont">
-            Contact
-        </section>
-    </div>
+    <section class="cont">
+        Contact
+    </section>
 </template>
 <script>
-    import MainHeader from './MainHeader'
     export default {
-        name: 'Contact',
-        components: {
-            MainHeader
-        },
+        name: 'Contact'
     }
 </script>
 <style lang="scss" scoped>

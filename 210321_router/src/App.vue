@@ -1,11 +1,18 @@
 <template>
-  <router-view></router-view>
+  <main-layout>
+    <router-view></router-view>
+  </main-layout>
 </template>
 <script>
-export default {
-  name: 'App'
-}
+  import MainLayout from '@/layouts/MainLayout'
+
+  export default {
+    name: 'App',
+    components: {
+      MainLayout
+    },
+  }
 </script>
 <style lang="">
-  
+
 </style>
