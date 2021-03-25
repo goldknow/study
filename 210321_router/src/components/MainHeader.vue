@@ -1,42 +1,40 @@
 <template>
     <header>
         <nav>
-            <v-link v-for="(item, key) in headerData" :key="key"
-                :href="item.href"
-                :style="{backgroundColor:item.bgColor}"
-            >
+            <router-link v-for="(item, key) in headerData" :key="key" :to="item.link">
                 {{item.title}}
-            </v-link>
+            </router-link>
         </nav>
     </header>
 </template>
 <script>
-    import VLink from '@/components/VLink'
     export default {
         name: 'Header',
-        components: {
-            VLink
+        computed: {
+
         },
         data() {
             return {
-                headerData: [
-                    {
+                headerData: [{
                         title: 'home',
-                        href: "/",
+                        link: "/",
                         bgColor: '#fef1e0'
                     },
                     {
                         title: 'about',
-                        href: "/about",
+                        link: "/about",
                         bgColor: '#e6fce6'
                     },
                     {
                         title: 'contact',
-                        href: "/contact",
+                        link: "/contact",
                         bgColor: '#d6f3f7'
                     },
                 ]
             }
+        },
+        methods: {
+
         }
     }
 </script>
@@ -62,5 +60,9 @@
                 }
             }
         }
+    }
+
+    .router-link-exact-active {
+        font-weight: 700;
     }
 </style>

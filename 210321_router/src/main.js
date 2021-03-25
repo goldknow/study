@@ -1,5 +1,9 @@
+import VueRouter from 'vue-router'
+import routes from './router.js'
+import App from './App.vue'
 import Vue from 'vue'
-import router from '@/router'
+
+Vue.use(VueRouter)
 
 // Importing the global css file
 import '@/assets/styles/font.css';
@@ -9,21 +13,12 @@ import '@/assets/styles/common.css';
 
 Vue.config.productionTip = false
 
-const app = new Vue({
-  data: {
-    currentRoute: window.location.pathname
-  },
-  computed: {
-    ViewComponent() {
-      return router[this.currentRoute]
-    }
-  },
-  render(h) {
-    return h(this.ViewComponent)
-  }
-}).$mount('#app')
-
-
-window.addEventListener('popstate', () => {
-  app.currentRoute = window.location.pathname
+const router = new VueRouter({
+  mode: 'history',
+  routes
 })
+
+new Vue({
+  router,
+  render: h => h(App)
+}).$mount('#app')
