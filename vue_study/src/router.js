@@ -1,6 +1,6 @@
 import Home from "@/components/Home"
 import About from "@/components/About"
-import Contact from "@/components/Contact"
+import Style from "@/components/Style"
 
 const router = [
     {
@@ -12,8 +12,8 @@ const router = [
         component : About
     },
     {
-        path:'/Contact',
-        component : Contact
+        path:'/Style',
+        component : Style
     }
 ]
 
