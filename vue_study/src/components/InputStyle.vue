@@ -1,10 +1,8 @@
 <template>
 	<!-- 
-
 	중국어, 일본어, 한국어 등은 입력이 끝나야지만 입력값이 동기화된다.
-
-	이러한 v-model의 한계점 때문에 뷰 공식 문서에서는 한국어 입력을 다룰 때 v-bind:value와 v-on:input을 직접 연결해서 사용하는 것을 권고하고 있다.
-
+	이러한 v-model의 한계점 때문에 뷰 공식 문서에서는 한국어 입력을 다룰 때 
+	v-bind:value와 v-on:input을 직접 연결해서 사용하는 것을 권고하고 있다.
 	-->
 	<div class="input-area">
 		<label 

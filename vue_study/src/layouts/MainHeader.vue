@@ -23,8 +23,8 @@
                         bgColor: '#e6fce6'
                     },
                     {
-                        title: 'style',
-                        link: "/style",
+                        title: 'contact',
+                        link: "/contact",
                         bgColor: '#d6f3f7'
                     },
                 ]

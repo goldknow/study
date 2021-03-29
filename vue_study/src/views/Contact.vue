@@ -73,8 +73,8 @@
 </template>
 
 <script>
-import InputStyle from './InputStyle.vue'
-import TextareaStyle from './TextareaStyle.vue'
+import InputStyle from '@/components/InputStyle.vue'
+import TextareaStyle from '@/components/TextareaStyle.vue'
 
 export default {
     name: 'Style',
