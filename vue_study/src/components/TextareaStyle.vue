@@ -27,7 +27,6 @@ export default {
 
 <style lang="scss" scoped>
 .text-area {
-    margin-bottom: 15px;
     position: relative;
 
     textarea {

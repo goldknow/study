@@ -15,6 +15,7 @@
 			:type="type" 
 			:id="id" 
 			:disabled="disabled" 
+            :readonly="readonly"
 			:placeholder="placeholder">
 	</div>
 </template>
@@ -23,7 +24,7 @@
 export default {
     name: 'InputStyle',
     props: [
-        'value', 'type', 'id', 'placeholder', 'isHide', 'disabled'
+        'value', 'type', 'id', 'placeholder', 'isHide', 'disabled', 'readonly'
     ],
     methods: {
         updateInput: function (e) {
@@ -40,7 +41,6 @@ $labelWidth : 110px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 15px;
 
     label {
         width: $labelWidth;
