@@ -46,9 +46,9 @@
 
          <!-- select custom -->
          <select-custom-style
-            :lists="['서울특별시','세종특별자치시','대전광역시','울산광역시','광주광역시']"
+            :lists="selectList"
             :default="'거주지역을 선택해 주세요.'"
-            v-model.trim="selectedCustom"
+            v-model="selectedCustom"
          ></select-custom-style>
 
          <!-- select option -->
@@ -107,9 +107,15 @@
             inputEmail: '',
             inputMessage: '',
             selectedCustom: '',
+            selectList: [
+               '서울특별시',
+               '세종특별자치시',
+               '대전광역시',
+               '울산광역시',
+               '광주광역시',
+            ],
             selected: '',
-            options: [
-               {
+            options: [{
                   text: '가입경로',
                   value: ''
                },

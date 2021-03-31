@@ -31,23 +31,24 @@
 
 <script>
     export default {
-        //name:'SelectStyle',
-        props: {
-            lists: {
-                type: Array,
-                required: true
-            },
-            default: {
-                type: String,
-                required: false,
-                default: null
-            },
-            tabindex: {
-                type: Number,
-                required: false,
-                default: 0
-            }
-        },
+        name:'SelectCustomStyle',
+        props: [
+            'lists', 'default', 'tabindex'
+            // lists: {
+            //     type: Array,
+            //     required: true
+            // },
+            // default: {
+            //     type: String,
+            //     required: false,
+            //     default: null
+            // },
+            // tabindex: {
+            //     type: Number,
+            //     required: false,
+            //     default: 0
+            // }
+        ],
         data() {
             return {
                 selectedCustom: this.default 
@@ -93,7 +94,7 @@
                 &.disabled {
                     background-color: #f2f2f2;
                     color: #ddd;
-                    cursor: default;
+                    pointer-events: none;
                 }
             }
         }

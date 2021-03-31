@@ -9,15 +9,16 @@
 		<option
 			v-for="(option, i) in options" :key="i" 
 			:value="option.value"
-			:disabled="disabled" 
+			:disabled="value.includes(option.value)"
 		>{{option.text}}</option>
+
 	</select>
 </template>
 <script>
 	export default {
 		name: 'SelectStyle',
 		props: [
-			'value', 'name', 'id', 'options', 'disabled'
+			'value', 'name', 'id', 'options'
 		],
 		methods: {
 			updateInput: function (e) {
