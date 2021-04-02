@@ -1,7 +1,10 @@
 <template>
     <header>
         <nav>
-            <router-link v-for="(item, key) in headerData" :key="key" :to="item.link">
+            <router-link 
+                v-for="(item, key) in headerData" :key="key" 
+                :to="item.link"
+            >
                 {{item.title}}
             </router-link>
         </nav>
@@ -12,24 +15,26 @@
         name: 'Header',
         data() {
             return {
-                headerData: [{
+                headerData: [
+                    {
                         title: 'home',
-                        link: "/",
-                        bgColor: '#fef1e0'
+                        link: "/"
                     },
                     {
                         title: 'about',
-                        link: "/about",
-                        bgColor: '#e6fce6'
+                        link: "/about"
                     },
                     {
                         title: 'contact',
-                        link: "/contact",
-                        bgColor: '#d6f3f7'
+                        link: "/contact"
+                    },
+                    {
+                        title: 'gallery',
+                        link: "/gallery"
                     },
                 ]
             }
-        }
+        },
     }
 </script>
 <style lang="scss" scoped>
