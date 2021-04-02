@@ -23,6 +23,7 @@
 <script>
 export default {
     name: 'InputStyle',
+    // props는 type을 꼭!!! 써서 넘기자!!!
     props: {
         value: {
             type: String
@@ -43,7 +44,8 @@ export default {
             type: String
         },
         isHide: {
-            type: Boolean
+            type: Boolean,
+            default: false
         }
     },
     methods: {

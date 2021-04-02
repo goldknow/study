@@ -7,6 +7,7 @@
             :value="value" 
             @input="updateInput"
         ></textarea>
+        <!-- maxlength 에 맞춰서 제한 글자 만들기! -->
         <!-- <p>0/30자</p> -->
     </div>
 </template>
@@ -14,9 +15,20 @@
 <script>
 export default {
     name: 'TextareaStyle',
-    props: [
-        'value', 'placeholder', 'resize', 'maxlength'
-    ],
+    props: {
+        value: {
+            typs: String
+        }, 
+        placeholder: {
+            typs: String
+        }, 
+        resize: {
+            typs: String
+        }, 
+        maxlength: {
+            typs: Number
+        }
+    },
     methods: {
         updateInput: function (e) {
             this.$emit('input', e.target.value)

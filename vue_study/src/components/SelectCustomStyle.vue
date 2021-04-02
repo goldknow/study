@@ -32,23 +32,22 @@
 <script>
     export default {
         name:'SelectCustomStyle',
-        props: [
-            'lists', 'default', 'tabindex'
-            // lists: {
-            //     type: Array,
-            //     required: true
-            // },
-            // default: {
-            //     type: String,
-            //     required: false,
-            //     default: null
-            // },
-            // tabindex: {
-            //     type: Number,
-            //     required: false,
-            //     default: 0
-            // }
-        ],
+        props: {
+            lists: {
+                type: Array,
+                required: true
+            },
+            default: {
+                type: String,
+                required: false,
+                default: null
+            },
+            tabindex: {
+                type: Number,
+                required: false,
+                default: 0
+            }
+        },
         data() {
             return {
                 selectedCustom: this.default 

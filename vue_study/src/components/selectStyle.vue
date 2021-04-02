@@ -17,9 +17,20 @@
 <script>
 	export default {
 		name: 'SelectStyle',
-		props: [
-			'value', 'name', 'id', 'options'
-		],
+		props: {
+			value: {
+				typs: String
+			}, 
+			name: {
+				typs: String
+			}, 
+			id: {
+				typs: String
+			}, 
+			options: {
+				typs: String
+			}
+		},
 		methods: {
 			updateInput: function (e) {
 				this.$emit('input', e.target.value)
