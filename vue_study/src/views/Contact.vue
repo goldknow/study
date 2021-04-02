@@ -32,9 +32,9 @@
          <input-style 
             type="password" 
             id="password"
-            placeholder="비밀번호를 한번 더 입력해주세요" 
-            isHide="true"
+            placeholder="비밀번호를 한번 더 입력해주세요"
             v-model.trim="inputPassword2"
+            :isHide="true"
          ></input-style>
 
          <input-style 

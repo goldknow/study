@@ -7,7 +7,7 @@
 	<div class="input-area">
 		<label 
 			:for="id" 
-			:class="{font0: isHide}"
+			:class="{'font0': isHide}"
 		>{{id}}</label>
 		<input 
 			:value="value" 
@@ -23,9 +23,29 @@
 <script>
 export default {
     name: 'InputStyle',
-    props: [
-        'value', 'type', 'id', 'placeholder', 'isHide', 'disabled', 'readonly'
-    ],
+    props: {
+        value: {
+            type: String
+        }, 
+        type: {
+            type: String
+        }, 
+        id: {
+            type: String
+        },
+        placeholder: {
+            type: String
+        },
+        disabled: {
+            type: String
+        }, 
+        readonly: {
+            type: String
+        },
+        isHide: {
+            type: Boolean
+        }
+    },
     methods: {
         updateInput: function (e) {
             this.$emit('input', e.target.value)
