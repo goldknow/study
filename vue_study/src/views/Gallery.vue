@@ -6,6 +6,13 @@
 			3. 갤러리형, 리스트형, 웹진형의 전환 버튼을 구현하여 실시간으로 변경될 수 있어야 합니다.
 		-->
 
+		<!--
+			!!
+			transition
+			keep-alive 
+			modal
+		-->
+
 		<div class="wrap">
 			<div class="btn-area">
 				<button 
