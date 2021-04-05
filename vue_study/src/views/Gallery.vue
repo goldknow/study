@@ -65,10 +65,6 @@
 			changeType(type){
 				this.type = type
 				console.log(this.type)
-			},
-			counter(){
-				this.count += 1
-				console.log()
 			}
 		}
 

@@ -27,7 +27,7 @@
 				:lists ="lists"
 				v-else
 			></vue-list-webzine>	
-			
+
 		</keep-alive>
 
 	</div>
@@ -51,10 +51,6 @@
 			type: {
 				type:String,
 				default:'list'
-			}
-		},
-		data(){
-			return{
 			}
 		}
 	}
