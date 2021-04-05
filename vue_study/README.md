@@ -23,7 +23,7 @@ yarn lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-
+<!-- 
 ### history API
 ```
 # history.pushState
@@ -60,4 +60,4 @@ pushState와 replaceState를 한 후, 뒤로가기나 앞으로가기를 할 때
 
 #history.forward() 
 --다음페이지로 이동
-```
+``` -->
