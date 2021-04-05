@@ -1,21 +1,29 @@
 <template>
-	<div class="webzine">
-		<div class="img"
-			:style="{backgroundImage: `url(${ListItem.imgUrl})`}"
-		></div>
-		<div class="txt">
-			<h2>{{ ListItem.title }}</h2>
-			<h3>{{ ListItem.text }}</h3>
-			<h4>{{ ListItem.date }}</h4>
-		</div>
-	</div>
+	<section>
+		<div 
+			class="webzine"
+			v-for="(list, i) in lists" :key="i"
+		>
+			<div class="img"
+				:style="{backgroundImage: `url(${list.imgUrl})`}"
+			></div>
+			<div class="txt">
+				<h2>{{ list.title }}</h2>
+				<h3>{{ list.text }}</h3>
+				<h4>{{ list.date }}</h4>
+			</div>
+		</div>	
+	</section>
+
 </template>
 <script>
 export default {
 	name:'VueListWebzine',
-	props: [
-		'ListItem'
-	]
+	props: {
+		lists: {
+			type: Array
+		}
+	}
 }
 </script>
 <style lang="scss" scoped>

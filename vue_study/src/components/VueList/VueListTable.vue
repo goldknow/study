@@ -1,5 +1,7 @@
 <template>
-	<div class="table">
+<section>
+	<div class="table"
+	>
 		<table>
 			<colgroup>
 				<col width="10%">
@@ -23,14 +25,18 @@
 				</tr>
 			</tbody>
 		</table>
-	</div>
+	</div>	
+</section>
+
 </template>
 <script>
 export default {
 	name:'VueListTable',
-		props: [
-			'lists'
-		]
+	props: {
+		lists: {
+			type: Array
+		}
+	}
 }
 </script>
 <style lang="scss" scoped>

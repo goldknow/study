@@ -1,26 +1,34 @@
 <template>
-	<div class="card"
-	>
-		<div class="img"
-			:style="{backgroundImage: `url(${ListItem.imgUrl})`}"
-		></div>
-		<div class="txt">
-			<h2>{{ ListItem.title }}</h2>
-			<h3>{{ ListItem.text }}</h3>
-		</div>
-	</div>
+	<section>
+		<div 
+			class="card"
+			v-for="(list, i)  in lists" :key="i"
+		>
+			<div class="img"
+				:style="{backgroundImage: `url(${list.imgUrl})`}"
+			></div>
+			<div class="txt">
+				<h2>{{ list.title }}</h2>
+				<h3>{{ list.text }}</h3>
+			</div>
+		</div>	
+	</section>
 </template>
 <script>
 	export default {
-		name: 'VueListGallery',
-		props: [
-			'ListItem'
-		]
+		name: 'VueListCard',
+		props: {
+			lists: {
+				type: Array
+			}
+		}
 	}
 </script>
 <style lang="scss" scoped>
 @import '@/assets/styles/_mixin.scss';
-
+	section {
+		display: flex;
+	}
 	.card {
 		width: calc(100% / 3);
 		padding: 15px;
