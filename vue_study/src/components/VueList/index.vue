@@ -21,6 +21,7 @@
 			<vue-list-table
 				:lists ="lists"
 				v-else-if="type==='table'"
+				@click="incrementCounter"
 			></vue-list-table>
 
 			<vue-list-webzine
@@ -51,6 +52,11 @@
 			type: {
 				type:String,
 				default:'list'
+			}
+		},
+		methods: {
+			incrementCounter(list) {
+				this.$emit('click', list)
 			}
 		}
 	}

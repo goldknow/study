@@ -29,6 +29,7 @@
 			<vue-list
 				:type="type"
 				:lists ="ListData"
+				@click="incrementCounter"
 			></vue-list> 
 		</div>
 
@@ -51,19 +52,22 @@
 						title:'제목1',
 						text: '좋아요 맘에 들어요 좋아요 맘에 들어요 좋아요 맘에 들어요 좋아요 맘에 들어요 좋아요 맘에 들어요 좋아요 맘에 들어요 좋아요 맘에 들어요 좋아요 맘에 들어요 좋아요 맘에 들어요',
 						imgUrl:require('@/assets/images/img01.png'),
-						date: '2021-04-02'
+						date: '2021-04-02',
+						count:0
 					},
 					{
 						title:'제목2',
 						text: '내용2 내용2 내용2 내용2 내용2 내용2',
 						imgUrl:require('@/assets/images/img02.png'),
-						date: '2021-04-02'
+						date: '2021-04-02',
+						count:0
 					},
 					{
 						title:'제목3',
 						text: '내용3',
 						imgUrl:require('@/assets/images/img03.png'),
-						date: '2021-04-02'
+						date: '2021-04-02',
+						count:0
 					},
 				]
 			}
@@ -71,16 +75,17 @@
 		methods: {
 			changeType(type){
 				this.type = type
-				console.log(this.type)
+				//console.log(this.type)
+			},			
+			incrementCounter(list){
+				list.count ++
 			}
 		}
-
 	}
 </script>
 <style lang="scss" scoped>
 	.cont {
 		display: block;
-      height: auto;
       padding: 50px 0;
 		background-color: #e1e0fe;
 	}

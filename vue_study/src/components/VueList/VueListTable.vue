@@ -7,12 +7,14 @@
 				<col width="10%">
 				<col width="*">
 				<col width="20%">
+				<col width="5%">
 			</colgroup>
 			<thead>
 				<tr>
 					<th>제목</th>
 					<th>내용</th>
 					<th>날짜</th>
+					<th>조회수</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -22,6 +24,9 @@
 					<td>{{ list.title }}</td>
 					<td>{{ list.text }}</td>
 					<td>{{ list.date }}</td>
+					<td
+						@click="$emit('click', list)"
+					>{{ list.count }}</td>
 				</tr>
 			</tbody>
 		</table>

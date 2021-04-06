@@ -140,7 +140,6 @@
 <style lang="scss" scoped>
    .cont {
       display: block;
-      height: auto;
       padding: 50px 0;
       text-align: center;
       background-color: #d6f3f7;
