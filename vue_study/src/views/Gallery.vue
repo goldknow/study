@@ -28,20 +28,25 @@
 
 			<vue-list
 				:type="type"
-				:lists ="ListData"
+				:lists="ListData"
 				@click="incrementCounter"
-			></vue-list> 
+			></vue-list> 		
+		
+			<vue-modal
+			>
+			</vue-modal>
 		</div>
-
 	</section>
 </template>
 <script>
 	import VueList from '@/components/VueList/'
+	import VueModal from '../components/VueModal.vue'
 
 	export default {
 		name: 'Gallery',
 		components: {
-			VueList
+			VueList,
+			VueModal
 		},
 		data(){
 			return {
@@ -111,4 +116,6 @@
 	.card-area {
 		display: flex;
 	}
+
+
 </style>
