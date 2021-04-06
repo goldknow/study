@@ -21,11 +21,13 @@
 				<tr
 					v-for="(list, i)  in lists" :key="i"
 				>
-					<td>{{ list.title }}</td>
+					<td
+						@click="$emit('open', list)"
+					>{{ list.title }}</td>
 					<td>{{ list.text }}</td>
 					<td>{{ list.date }}</td>
 					<td
-						@click="$emit('click', list)"
+						@click="$emit('counter', list)"
 					>{{ list.count }}</td>
 				</tr>
 			</tbody>

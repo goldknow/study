@@ -8,7 +8,9 @@
 				:style="{backgroundImage: `url(${list.imgUrl})`}"
 			></div>
 			<div class="txt">
-				<h2>{{ list.title }}</h2>
+				<h2
+					@click="$emit('open', list)"
+				>{{ list.title }}</h2>
 				<h3>{{ list.text }}</h3>
 				<h4>{{ list.date }}</h4>
 			</div>

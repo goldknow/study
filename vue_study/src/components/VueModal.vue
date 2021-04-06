@@ -1,15 +1,17 @@
 <template>
 	<div 
-		class="modal-wrap" style="display: block;"
+		class="modal-wrap" 
 	>
 		<div class="modal">
-			<button class="modal-close"></button>
+			<button class="modal-close"
+				@click="close"
+			></button>
 			<div class="modal-cont">
-				<!-- <div class="modal-head">{{ lists.title }}</div>
+				<div class="modal-head"><slot name="title"></slot></div>
 				<div class="modal-body">
-					<p>{{ lists.date }}</p>
-					<div>{{ lists.text }}</div>
-				</div> -->
+					<slot name="date"></slot>
+					<slot name="text"></slot>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -20,6 +22,11 @@
 		props: {
 			lists:{
 				type: Array
+			}
+		},
+		methods: {
+			close(){
+				this.$emit('close')
 			}
 		},
 	}
@@ -38,7 +45,7 @@
 	}
 
 	.modal-wrap {
-		display: none;
+		//display: none;
 		position: fixed;
 		top: 0;
 		left: 0;

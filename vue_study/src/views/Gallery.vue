@@ -29,12 +29,20 @@
 			<vue-list
 				:type="type"
 				:lists="ListData"
-				@click="incrementCounter"
-			></vue-list> 		
-		
-			<vue-modal
-			>
-			</vue-modal>
+				@open="modalOpen"
+				@counter="incrementCounter"
+			></vue-list> 
+
+			<transition name="modal" mode="out-in">
+				<vue-modal
+					v-if="isShow"
+					@close="modalClose"
+				>
+					<!-- 클릭한 list의 데이터를 모달에 넣기 -->
+					<!-- <h3 :slot="title">{{lists.title}}</h3> -->
+				</vue-modal>	
+			</transition>
+
 		</div>
 	</section>
 </template>
@@ -50,6 +58,7 @@
 		},
 		data(){
 			return {
+				isShow:false,
 				currentView:'VueList',
 				type:'card',
 				ListData : [
@@ -84,6 +93,12 @@
 			},			
 			incrementCounter(list){
 				list.count ++
+			},
+			modalClose(){
+				this.isShow = false
+			},
+			modalOpen(){
+				this.isShow = true
 			}
 		}
 	}
@@ -117,5 +132,13 @@
 		display: flex;
 	}
 
+	.modal-enter-active,
+	.modal-leave-active {
+		transition: opacity .3s;
+	}
 
+	.modal-enter,
+	.modal-leave-to {
+		opacity: 0;
+	}
 </style>

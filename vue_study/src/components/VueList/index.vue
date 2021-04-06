@@ -3,19 +3,22 @@
 		<keep-alive>
 			<transition name="fade" mode="out-in">
 				<vue-list-card
-					:lists ="lists"
 					v-if="type==='card'"
+					:lists ="lists"
+					@open="modalOpen"
 				></vue-list-card>	
 
 				<vue-list-table
-					:lists ="lists"
 					v-else-if="type==='table'"
-					@click="incrementCounter"
+					:lists ="lists"
+					@open="modalOpen"
+					@counter="incrementCounter"
 				></vue-list-table>
 
 				<vue-list-webzine
+					v-else 
 					:lists ="lists"
-					v-else
+					@open="modalOpen"
 				></vue-list-webzine>	
 			</transition>
 		</keep-alive>
@@ -44,7 +47,10 @@
 		},
 		methods: {
 			incrementCounter(list) {
-				this.$emit('click', list)
+				this.$emit('counter', list)
+			},
+			modalOpen(list){
+				this.$emit('open', list)
 			}
 		}
 	}
