@@ -16,53 +16,56 @@
 		</div>	
 	</section>
 </template>
+
 <script>
-	export default {
-		name: 'VueListCard',
-		props: {
-			lists: {
-				type: Array
-			}
-		}
-	}
+export default {
+    name: 'VueListCard',
+    props: {
+        lists: {
+            type: Array
+        }
+    }
+}
 </script>
+
 <style lang="scss" scoped>
 @import '@/assets/styles/_mixin.scss';
 
-	section {
-		display: flex;
-	}
-	.card {
-		width: calc(100% / 3);
-		padding: 15px;
-		border: 1px solid;
-		border-radius: 15px;
-		background-color: #fff;
-		line-height: 1.3;
-		
-		& + .card {
-			margin-left: 15px;
-		}
+section {
+    display: flex;
+}
 
-		.img {
-			height: 150px;
-			@include bgImg(50% 50%, contain)
-		}
+.card {
+    width: calc(100% / 3);
+    padding: 15px;
+    border: 1px solid;
+    border-radius: 15px;
+    background-color: #fff;
+    line-height: 1.3;
 
-		.txt {
-			h2 {
-				padding-top: 15px;
-				font-size: 18px;
-				font-weight: 700;
-				cursor: pointer;
-			}
+    &+.card {
+        margin-left: 15px;
+    }
 
-			h3 {
-				margin-top: 10px;
-				padding-top: 10px;
-				border-top: 1px dashed #ddd;
-				font-size: 16px;
-			}
-		}
-	}
+    .img {
+        height: 150px;
+        @include bgImg(50% 50%, contain)
+    }
+
+    .txt {
+        h2 {
+            padding-top: 15px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        h3 {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed #ddd;
+            font-size: 16px;
+        }
+    }
+}
 </style>
