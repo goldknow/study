@@ -9,9 +9,9 @@
 			></div>
 			<div class="txt">
 				<h2
-					@click="$emit('open', list)"
+					@click="[$emit('open', list), $emit('input', list)]"
 				>{{ list.title }}</h2>
-				<h3>{{ list.text }}</h3>
+				<h3 class="ellip3">{{ list.text }}</h3>
 				<h4>{{ list.date }}</h4>
 			</div>
 		</div>	
@@ -60,6 +60,7 @@ export default {
 			h2 {
 				font-size: 18px;
 				font-weight: 700;
+				cursor: pointer;
 			}
 
 			h3 {
@@ -69,9 +70,10 @@ export default {
 
 			h4 {
 				position: absolute;
-				bottom: 10px;
-				right: 10px;
-				font-size: 14px;
+				bottom: 6px;
+				right: 17px;
+				font-size: 13px;
+				font-weight: 300;
 				color: #666;
 			}
 		}

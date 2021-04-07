@@ -9,9 +9,9 @@
 			></div>
 			<div class="txt">
 				<h2
-					@click="$emit('open', list)"
+					@click="[$emit('open', list), $emit('input', list)]"
 				>{{ list.title }}</h2>
-				<h3>{{ list.text }}</h3>
+				<h3 class="ellip3">{{ list.text }}</h3>
 			</div>
 		</div>	
 	</section>
@@ -23,11 +23,12 @@
 			lists: {
 				type: Array
 			}
-		},
+		}
 	}
 </script>
 <style lang="scss" scoped>
 @import '@/assets/styles/_mixin.scss';
+
 	section {
 		display: flex;
 	}
@@ -53,6 +54,7 @@
 				padding-top: 15px;
 				font-size: 18px;
 				font-weight: 700;
+				cursor: pointer;
 			}
 
 			h3 {

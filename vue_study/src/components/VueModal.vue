@@ -45,7 +45,6 @@
 	}
 
 	.modal-wrap {
-		//display: none;
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -73,16 +72,28 @@
 			padding: 40px 30px;
 		}
 
-		.modal-head {
+		.modal-head h2 {
+			padding: 20px 0;
 			font-size: 24px;
-			padding-bottom: 40px;
+			line-height: 1.5;
 		}
 
 		.modal-body {
-			padding-bottom: 30px;
 			line-height: 1.5;
 			letter-spacing: -0.4px;
 			overflow: hidden;
+
+			.date {
+				font-weight: 300;
+				text-align: right;
+				color: #666;
+			}
+
+			.text {
+				padding-top: 10px;
+				text-align: left;
+				font-size: 18px;
+			}
 		}
 	}
 

@@ -3,12 +3,16 @@
 		<keep-alive>
 			<transition name="fade" mode="out-in">
 				<vue-list-card
+					v-model="$attrs.value"
+					@input="$emit('input', $attrs.value)"
 					v-if="type==='card'"
 					:lists ="lists"
 					@open="modalOpen"
 				></vue-list-card>	
 
 				<vue-list-table
+					v-model="$attrs.value"
+					@input="$emit('input', $attrs.value)"
 					v-else-if="type==='table'"
 					:lists ="lists"
 					@open="modalOpen"
@@ -16,6 +20,8 @@
 				></vue-list-table>
 
 				<vue-list-webzine
+					v-model="$attrs.value"
+					@input="$emit('input', $attrs.value)"
 					v-else 
 					:lists ="lists"
 					@open="modalOpen"
