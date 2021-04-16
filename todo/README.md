@@ -26,8 +26,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## Project name 규칙
 ```
-컴포넌트 이름은 합성어를 사용, 
-		파스칼케이스(TodoList.vue), 케밥케이스(todo-list.vue)
+컴포넌트 이름은 합성어를 사용, 파스칼케이스(TodoList.vue), 케밥케이스(todo-list.vue)
 
 템플릿은 케밥케이스 사용
 
