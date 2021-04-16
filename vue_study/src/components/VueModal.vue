@@ -5,7 +5,7 @@
 		<!-- 
 			slot을 쓴 이유는 재사용성을 위해서!
 			부모에서 불러서 부모 데이터를 그 때 쓰려궁
-		 -->
+		-->
 		<div class="modal">
 			<button class="modal-close"
 				@click="close"
