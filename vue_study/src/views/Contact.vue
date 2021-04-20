@@ -143,26 +143,21 @@ export default {
 	text-align: center;
 	background-color: #d6f3f7;
 
-	.inner {
-		max-width: 450px;
-		margin: auto;
+	.result {
+		margin-top: 50px;
+		padding: 30px;
+		background-color: #fff;
+		border-radius: 15px;
+		text-align: left;
 
-		.result {
-			margin-top: 50px;
-			padding: 30px;
-			background-color: #fff;
-			border-radius: 15px;
-			text-align: left;
+		h3 {
+			padding-bottom: 20px;
+			color: cadetblue;
+			font-weight: 700;
+		}
 
-			h3 {
-				padding-bottom: 20px;
-				color: cadetblue;
-				font-weight: 700;
-			}
-
-			p + p {
-				margin-top: 15px;
-			}
+		p + p {
+			margin-top: 15px;
 		}
 	}
 

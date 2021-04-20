@@ -32,6 +32,10 @@
                         title: 'gallery',
                         link: "/gallery"
                     },
+                    {
+                        title: 'todo',
+                        link: "/todo"
+                    },
                 ]
             }
         },

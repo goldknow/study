@@ -9,7 +9,7 @@
 			></div>
 			<div class="txt">
 				<h2
-					@click="[$emit('open', list), $emit('input', list)]"
+					@click="$emit('open', list); $emit('input', list)"
 				>{{ list.title }}</h2>
 				<h3 class="ellip3">{{ list.text }}</h3>
 			</div>

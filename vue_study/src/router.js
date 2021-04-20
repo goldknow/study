@@ -2,6 +2,7 @@ import Home from "@/views/Home"
 import About from "@/views/About"
 import Contact from "@/views/Contact"
 import Gallery from "@/views/Gallery"
+import Todo from "@/views/Todo"
 
 const router = [
     {
@@ -19,6 +20,10 @@ const router = [
     {
         path:'/Gallery',
         component : Gallery
+    },
+    {
+        path:'/Todo',
+        component : Todo
     }
 ]
 
