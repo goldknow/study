@@ -1,36 +1,20 @@
 <template>
   <div>
-    <todo-item
-      :todoList="todoList"
-      :isChecked="isChecked"
-      @check="checkTodo"
-      @delete="toggleTodo"
-    ></todo-item>
+      <button>DO clear</button>
   </div>
 </template>
 
 <script>
-import TodoItem from "./TodoItem.vue";
+
 
 export default {
   name: "BoardList",
-  components: { TodoItem },
+  components: {  },
   props: {
-    todoList: {
-      type: Array,
-    },
-    isChecked: {
-      type: Boolean,
-      default: false,
-    },
+
   },
   methods: {
-    checkTodo(todo) {
-      this.$emit("check", todo);
-    },
-    toggleTodo(todo) {
-      this.$emit("delete", todo);
-    },
+
   },
 };
 </script>

@@ -7,10 +7,11 @@ import vueMoment from 'vue-moment'
 Vue.use(VueRouter)
 Vue.use(vueMoment)
 
+
 // Importing the global css file
-import '@/assets/styles/font.css';
-import '@/assets/styles/reset.css';
-import '@/assets/styles/common.css';
+import '@/assets/styles/font.css'
+import '@/assets/styles/reset.css'
+import '@/assets/styles/common.css'
 
 
 Vue.config.productionTip = false

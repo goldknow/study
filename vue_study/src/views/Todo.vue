@@ -1,28 +1,31 @@
 <template>
-  <!--
-    1. 클래스 바인딩이 왜 안되지?
-    2. BoardList 배열 확인 어떻게하지? 배열 안에 넣어져 있는걸 확인해야 총 갯수랑 그런거 연결할텐데
--->
 
   <section class="cont">
     <h3>TODO LIST</h3>
     <div class="inner">
+        
+      <board-list
+        
+      ></board-list>
+
       <input type="text" v-model="todoInput" @keyup.enter="addNewTodo" />
 
-      <board-list
+      <todo-item
         :todoList="activeTodoList"
         :isChecked="isChecked"
         @check="checkTodo"
         @delete="toggleTodo"
-      ></board-list>
+      ></todo-item>
     </div>
   </section>
 </template>
 <script>
+import TodoItem from "@/components/Board/TodoItem.vue";
 import BoardList from "@/components/Board/";
 export default {
   name: "Todo",
   components: {
+    TodoItem,
     BoardList,
   },
   data() {
@@ -34,7 +37,6 @@ export default {
   },
 
   // json 객체로 만든다(html안에서 내부 변수처럼 사용)
-  // 클래스의 getter 함수 같이 동작한다.
   computed: {
     //삭제 버튼 클릭시 on/off
     activeTodoList() {
@@ -48,10 +50,9 @@ export default {
       this.todoList.push({
         label: this.todoInput, //input 값
         state: "active", //상태
-        isChecked: false,
+        isChecked: false, //체크여부
       });
       this.todoInput = ""; //이벤트 후 리셋
-      //console.log(todoList);
     },
     //삭제 버튼 클릭 시 상태값 변경
     toggleTodo(todo) {
