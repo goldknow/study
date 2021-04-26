@@ -1,4 +1,3 @@
 module.exports = {
-	outputDir: './docs',
-	publicPath: '/vue_study/'
+	outputDir: 'vue_study/docs'
 };
