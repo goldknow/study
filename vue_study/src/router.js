@@ -6,23 +6,23 @@ import Todo from "@/views/Todo"
 
 const router = [
     {
-        path:'/',
+        path:'./',
         component : Home
     },
     {
-        path:'/About',
+        path:'./About',
         component : About
     },
     {
-        path:'/Contact',
+        path:'./Contact',
         component : Contact
     },
     {
-        path:'/Gallery',
+        path:'./Gallery',
         component : Gallery
     },
     {
-        path:'/Todo',
+        path:'./Todo',
         component : Todo
     }
 ]

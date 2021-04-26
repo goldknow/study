@@ -18,23 +18,23 @@
                 headerData: [
                     {
                         title: 'home',
-                        link: "/"
+                        link: "./"
                     },
                     {
                         title: 'about',
-                        link: "/about"
+                        link: "./about"
                     },
                     {
                         title: 'contact',
-                        link: "/contact"
+                        link: "./contact"
                     },
                     {
                         title: 'gallery',
-                        link: "/gallery"
+                        link: "./gallery"
                     },
                     {
                         title: 'todo',
-                        link: "/todo"
+                        link: "./todo"
                     },
                 ]
             }
